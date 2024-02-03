@@ -37,15 +37,15 @@ const Navbar = () => {
     };
   }, []);
  
-  const combinedData = [...boardExamData, ...paidBatch];
+  const combinedData = [...boardExamData, ];
   return (
     <Navbarstyles>
       <nav>
       {auth ?    
            <ul className="StyledUl">
         <li className="StyledLi" onClick={toggleDropdown} ref={dropdownRef}>
-            <Link className="StyledLink">Course</Link>
-            {showDropdown && (
+            <Link className="StyledLink">Mekup List</Link>
+    {showDropdown && (
               <div className="DropdownMenu">
                 <div className="DropdownItem">
                   {combinedData.map((course, index) => (
@@ -72,17 +72,17 @@ const Navbar = () => {
           </li>
           <li className="StyledLi">
             <Link className="StyledLink" to="/" style={{backgroundColor:"white" , height:"20vh" , color:"black"}}>
-              Study Academy
+            Mekup Manch
             </Link>
           </li>
           <li className="StyledLi">
-            <Link className="StyledLink" to="/openai">
-              Get AI Tutoring
+            <Link className="StyledLink" to="/artist">
+              Find Artist
             </Link>
           </li>
           <li className="StyledLi">
-            <Link className="StyledLink" to="/donation">
-              Donate
+            <Link className="StyledLink" to="/beautyparlour">
+              Find beauty paler
             </Link>
           </li>
       <li className="StyledLi">
@@ -127,17 +127,17 @@ const Navbar = () => {
           </li>
           <li className="StyledLi">
             <Link className="StyledLink" to="/" style={{backgroundColor:"white" , height:"20vh" , color:"black"}}>
-              Study Academy
+            Mekup Manch
             </Link>
           </li>
           <li className="StyledLi">
-            <Link className="StyledLink" to="/openai">
-              Get AI Tutoring
+            <Link className="StyledLink" to="/artist">
+            Find Artist
             </Link>
           </li>
           <li className="StyledLi">
-            <Link className="StyledLink" to="/donation">
-              Donate
+            <Link className="StyledLink" to="/beautyparlour">
+            Find beauty paler
             </Link>
           </li>
           <li className="StyledLi">

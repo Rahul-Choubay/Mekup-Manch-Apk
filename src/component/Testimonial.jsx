@@ -10,12 +10,12 @@ const Testimonial = () => {
     <Card >
         <div style={{display:"flex", flexDirection:"row" }}>
         <div style={{width:"40%" , marginLeft:"2rem"}} >
-            <img src="assets1.jpg" alt="Description" style={{width:'100%'}}/>
+            <img src="Groom1.jpeg" alt="Description" style={{width:'100%'}}/>
           </div>
           <div style={{width:"60%" , marginLeft:"2rem"}} >
       <CardBody>
         <CardTitle tag="h5">
-          TEACHERS
+          Artist
           <div style={{ display: 'inline-block', marginLeft: '10px' }}>
             <MdStar />
             <MdStar />
@@ -25,7 +25,7 @@ const Testimonial = () => {
           </div>
         </CardTitle>
         <CardText>
-          "I'm finally able to truly differentiate my classroom. This has been priceless for my students' engagement."
+          ""
         </CardText>
         <CardText tag="h6">
        Rahul Chaubey

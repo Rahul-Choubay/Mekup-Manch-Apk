@@ -7,12 +7,12 @@ function Learners() {
     <Div>
     <div className="learners-container">
       <div className="content">
-        <h1>LEARNERS AND STUDENTS</h1>
-        <p>You can learn anything. Build a deep, solid understanding in math, science, grammar, history, SAT®, and more.</p>
-        <button ><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Learners, start here</Link></button>
+        <h1>Beauty palur</h1>
+        <p>hsxahi</p>
+        <button ><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Clint, start here</Link></button>
       </div>
       <div className="image-container">
-        <img src="assets2.jpg" alt="Description" className="image" />
+        <img src="Bride.jpeg" alt="Description" className="image" />
       </div>
     </div>
     </Div>

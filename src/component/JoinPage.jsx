@@ -5,15 +5,13 @@ function JoinPage() {
   return (
     <Div>
     <div className="home-page">
-      <h1>Join Study Academy today</h1>
-      <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Student</Link></button>
-              <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Teacher</Link></button>
-              <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Parents</Link></button> 
-      <a href="/signup" className="button">
-        Give today <span className="amount">1999</span>
+      <h1>Join Meakup manch today</h1>
+      <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Clint</Link></button>
+                  <a href="/signup" className="button">
+        Give today <span className="amount">5999</span>
         <span className="so">・</span>
         <span className="goal">92%</span>
-        <span className="goal-text">& of 5000 goal</span>
+        <span className="goal-text">& of 15000 goal</span>
       </a>
     </div>
     </Div>

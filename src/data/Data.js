@@ -2,10 +2,10 @@
 export const boardExamData = [
   {
     id: 'CBSE-Board-Exam-Prep',
-    title: 'CBSE-Board-Exam-Prep',
+    title: 'Grils Mekup',
     classes: [
       {
-        title: 'Class 1',
+        title: 'Primer',
         url: '/classpage/1',
         lectures: [
           { id: 1, title: 'Math', description: 'Basics of React and its importance.' },
@@ -16,7 +16,7 @@ export const boardExamData = [
         ]
       },
       {
-        title: 'Class 2',
+        title: 'Foundation',
         url: '/classpage/2',
         lectures: [
           { id: 6, title: 'Advanced React Patterns', description: 'Exploring advanced patterns in React development.' },
@@ -27,7 +27,7 @@ export const boardExamData = [
         ]
       },
       {
-        title: 'Class 3',
+        title: 'Blush and Bronzer',
         url: '/classpage/3',
         lectures: [
           { id: 11, title: 'Math - Chapter 1: Numbers', description: 'Understanding basic numbers and their properties.' },
@@ -36,7 +36,7 @@ export const boardExamData = [
         ]
       },
       {
-        title: 'Class 4',
+        title: 'Eyebrows',
         url: '/classpage/4',
         lectures: [
           { id: 13, title: 'Science - Chapter 1: Living and Non-Living Things', description: 'Distinguishing between living and non-living entities.' },
@@ -45,7 +45,7 @@ export const boardExamData = [
         ]
       },
       {
-        title: 'Class 5',
+        title: 'Makeup Brushes and Tools',
         url: '/classpage/5',
         lectures: [
           { id: 15, title: 'Social Studies - Chapter 1: Our Country', description: 'Understanding the geography and culture of our country.' },
@@ -53,59 +53,15 @@ export const boardExamData = [
           // Add more unique lectures for Class 5
         ]
       },
-      {
-        title: 'Class 6',
-        url: '/classpage/6',
-        lectures: [
-          { id: 17, title: 'English - Grammar Basics', description: 'Introduction to grammar rules in the English language.' },
-          { id: 18, title: 'English - Reading Comprehension', description: 'Improving reading comprehension skills.' },
-          // Add more unique lectures for Class 6
-        ]
-      },
-      {
-        title: 'Class 7',
-        url: '/classpage/7',
-        lectures: [
-          { id: 19, title: 'Hindi - Vyakaran (Grammar)', description: 'Understanding grammar rules in Hindi language.' },
-          { id: 20, title: 'Hindi - Sahitya (Literature)', description: 'Exploring Hindi literature.' },
-          // Add more unique lectures for Class 7
-        ]
-      },
-      {
-        title: 'Class 8',
-        url: '/classpage/8',
-        lectures: [
-          { id: 21, title: 'Math - Algebra Basics', description: 'Introduction to algebraic concepts in mathematics.' },
-          { id: 22, title: 'Math - Geometry', description: 'Exploring geometric shapes and properties.' },
-          // Add more unique lectures for Class 8
-        ]
-      },
-      {
-        title: 'Class 9',
-        url: '/classpage/9',
-        lectures: [
-          { id: 23, title: 'Science - Physics Fundamentals', description: 'Basic principles of physics.' },
-          { id: 24, title: 'Science - Chemistry Basics', description: 'Introduction to fundamental concepts in chemistry.' },
-          // Add more unique lectures for Class 9
-        ]
-      },
-      {
-        title: 'Class 10',
-        url: '/classpage/10',
-        lectures: [
-          { id: 25, title: 'Social Studies - History', description: 'Exploring historical events and periods.' },
-          { id: 26, title: 'Social Studies - Civics', description: 'Understanding the political and civic structure.' },
-          // Add more unique lectures for Class 10
-        ]
-      },
+      
     ],
   },
   {
     id: 'Up-Board-Exam-Prep',
-    title:'Up-Board-Exam-Prep',
+    title:'Boys Mekup',
     classes: [
       {
-        title: 'Class 1',
+        title: 'Tinted Moisturizer or BB Cream',
         url: '/classpage/1',
         lectures: [
           { id: 1, title: 'Introduction to React', description: 'Basics of React and its importance.' },
@@ -116,7 +72,7 @@ export const boardExamData = [
         ]
       },
       {
-        title: 'Class 2',
+        title: 'Powder',
         url: '/classpage/2',
         lectures: [
           { id: 6, title: 'Advanced React Patterns', description: 'Exploring advanced patterns in React development.' },
@@ -127,7 +83,7 @@ export const boardExamData = [
         ]
       },
       {
-        title: 'Class 3',
+        title: 'Lip Balm',
         url: '/classpage/3',
         lectures: [
           { id: 11, title: 'Math - Chapter 1: Numbers', description: 'Understanding basic numbers and their properties.' },
@@ -136,7 +92,7 @@ export const boardExamData = [
         ]
       },
       {
-        title: 'Class 4',
+        title: 'Setting Spray',
         url: '/classpage/4',
         lectures: [
           { id: 13, title: 'Science - Chapter 1: Living and Non-Living Things', description: 'Distinguishing between living and non-living entities.' },
@@ -144,66 +100,13 @@ export const boardExamData = [
           // Add more unique lectures for Class 4
         ]
       },
-      {
-        title: 'Class 5',
-        url: '/classpage/5',
-        lectures: [
-          { id: 15, title: 'Social Studies - Chapter 1: Our Country', description: 'Understanding the geography and culture of our country.' },
-          { id: 16, title: 'Social Studies - Chapter 2: Famous Personalities', description: 'Learning about notable personalities in history.' },
-          // Add more unique lectures for Class 5
-        ]
-      },
-      {
-        title: 'Class 6',
-        url: '/classpage/6',
-        lectures: [
-          { id: 17, title: 'English - Grammar Basics', description: 'Introduction to grammar rules in the English language.' },
-          { id: 18, title: 'English - Reading Comprehension', description: 'Improving reading comprehension skills.' },
-          // Add more unique lectures for Class 6
-        ]
-      },
-      {
-        title: 'Class 7',
-        url: '/classpage/7',
-        lectures: [
-          { id: 19, title: 'Hindi - Vyakaran (Grammar)', description: 'Understanding grammar rules in Hindi language.' },
-          { id: 20, title: 'Hindi - Sahitya (Literature)', description: 'Exploring Hindi literature.' },
-          // Add more unique lectures for Class 7
-        ]
-      },
-      {
-        title: 'Class 8',
-        url: '/classpage/8',
-        lectures: [
-          { id: 21, title: 'Math - Algebra Basics', description: 'Introduction to algebraic concepts in mathematics.' },
-          { id: 22, title: 'Math - Geometry', description: 'Exploring geometric shapes and properties.' },
-          // Add more unique lectures for Class 8
-        ]
-      },
-      {
-        title: 'Class 9',
-        url: '/classpage/9',
-        lectures: [
-          { id: 23, title: 'Science - Physics Fundamentals', description: 'Basic principles of physics.' },
-          { id: 24, title: 'Science - Chemistry Basics', description: 'Introduction to fundamental concepts in chemistry.' },
-          // Add more unique lectures for Class 9
-        ]
-      },
-      {
-        title: 'Class 10',
-        url: '/classpage/10',
-        lectures: [
-          { id: 25, title: 'Social Studies - History', description: 'Exploring historical events and periods.' },
-          { id: 26, title: 'Social Studies - Civics', description: 'Understanding the political and civic structure.' },
-          // Add more unique lectures for Class 10
-        ]
-      },
+     
     ],
   },
   
 ];
 
-export const paidBatch =[
+ export const paidBatch =[
    {
   id: 'Gov-Jop-Exam-Prep (Paid Batch)',
   title: 'Gov-JoB-Exam-Prep  (Paid Batch)',

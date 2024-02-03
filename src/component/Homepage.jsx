@@ -9,17 +9,17 @@ const Homepage = () => {
         <div className="divmain">
             <div className="img">
           <div >
-            <img  src="assets.webp" alt="Description" />
+            <img  src="Groom.jpg" alt="Description" />
           </div>
           </div>
           <div className="Contentdiv">
           <div >
-            <h2>For every student, every classroom. Real results..</h2>
-            <p>We’re a nonprofit with the mission to provide a free, world-class education for anyone, anywhere.</p>
+            <h2>For every Bride, every Groom, every Buetu Parler Real results..</h2>
+            <p>We’re a the mission to provide a world-class Meukup for anyone, anywhere.</p>
             <div className="btndiv" style={{display:"flex", flexDirection:"row"}}>
-            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Student</Link></button>  
-            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Teacher</Link></button>  
-            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Parents</Link> </button>  {/* Corrected spelling from 'Perents' to 'Parents' */}
+            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Clint</Link></button>  
+            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Artist</Link></button>  
+            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >/Beauty Parlour</Link> </button>  {/* Corrected spelling from 'Perents' to 'Parents' */}
             </div>
           </div>
           </div>
