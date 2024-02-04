@@ -11,9 +11,9 @@ const Button = styled.button`
 const SignUpButtons = ({ setRole }) => {
   return (
     <div style={{ display: 'flex', gap: '20px' }}>
-      <Button onClick={() => setRole('student')}>Student</Button>
-      <Button onClick={() => setRole('teacher')}>Teacher</Button>
-      <Button onClick={() => setRole('parent')}>Parent</Button>
+      <Button onClick={() => setRole('student')}>Artist</Button>
+      <Button onClick={() => setRole('teacher')}>Costomer</Button>
+      <Button onClick={() => setRole('parent')}>Beauty Parlor</Button>
     </div>
   );
 };

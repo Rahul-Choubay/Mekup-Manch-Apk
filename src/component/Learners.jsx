@@ -4,17 +4,24 @@ import { Link } from "react-router-dom";
 
 function Learners() {
   return (
-    <Div>
-    <div className="learners-container">
-      <div className="content">
-        <h1>Beauty palur</h1>
-        <p>hsxahi</p>
-        <button ><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Clint, start here</Link></button>
+    <Div style={{width:"98.5vw", display:"flex", flexDirection:"column", justifyContent:"center", textAlign:"center",alignItems:'center'}}>
+      <div style={{width:"90vw", display:"flex", flexDirection:"column", justifyContent:"center", textAlign:"center",alignItems:'center'}}>
+<div style={{width:"85vw", display:"flex", flexDirection:"row", justifyContent:"center", textAlign:"center",alignItems:'center'}}>
+<div> <img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+<div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+<div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+
+</div>
       </div>
-      <div className="image-container">
-        <img src="Bride.jpeg" alt="Description" className="image" />
-      </div>
-    </div>
+      <div style={{width:"90vw", display:"flex", flexDirection:"column", justifyContent:"center", textAlign:"center",alignItems:'center'}}>
+        <div style={{width:"85vw", display:"flex", flexDirection:"row", justifyContent:"center", textAlign:"center",alignItems:'center'}}>
+        <div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+        <div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+        <div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+
+        </div>
+        </div>
+    
     </Div>
   );
 }

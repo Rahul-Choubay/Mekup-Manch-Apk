@@ -11,9 +11,10 @@ import TopArtists from '../component/TopArtists';
 import DonationPage from '../component/DonationPage';
 import Dashboard from '../component/Dashboard';
 import CoursePage from '../component/CoursePage';
-import ArtistProfile from '../component/ArtistProfile';
+
 import TopBeautyParlour from '../component/TopBeautyParlour';
 import BeautyParlourProfile from '../component/BeautyParlourProfile';
+import ArtistDetails from '../component/ArtistDetails';
 
 const MyRoute = () => {
   return (
@@ -22,9 +23,10 @@ const MyRoute = () => {
       <Route path="/homepage" element={<Homepage />} />
       <Route path="/signup" element={<Sign />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/classpage/:classId" element={<Classepage />} />
+     <Route path="/mekup/:classId" element={<Classepage />} />
+
       <Route path="/artist" element={<TopArtists />} />
-      <Route path="/artist/:id" element={<ArtistProfile />} /> {/* Use 'element' instead of 'component' */}
+      <Route path="/artist/:artistId" element={<ArtistDetails />} />
       <Route path="/beautyparlour" element={<TopBeautyParlour />} /> 
       <Route path="/beautyparlour/:id" element={<BeautyParlourProfile />} />
       <Route path="/Dashboard" element={<Dashboard />} />

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { boardExamData, paidBatch } from "../data/Data";
 import Navbar from '../myrou/Navbar';
 
-const Classepage = () => {
+const ClassPage = () => {
   const { classId } = useParams();
   const [selectedClass, setSelectedClass] = useState(null);
   const [openLectures, setOpenLectures] = useState([]);
@@ -11,11 +11,11 @@ const Classepage = () => {
 
   const fetchClassData = () => {
     const foundClass = boardExamData.find((course) => {
-      return course.classes.some((cls) => cls.url === `/classpage/${classId}`);
+      return course.classes.some((cls) => cls.url === `/mekup/${classId}`);
     });
 
     if (foundClass) {
-      const selectedClass = foundClass.classes.find((cls) => cls.url === `/classpage/${classId}`);
+      const selectedClass = foundClass.classes.find((cls) => cls.url === `/mekup/${classId}`);
       if (selectedClass) {
         console.log('Selected class:', selectedClass);
         setSelectedClass(selectedClass);
@@ -24,7 +24,7 @@ const Classepage = () => {
       }
     } else {
       const foundPaidClass = paidBatch.find((course) => {
-        return course.classes.some((cls) => cls.url === `/classpage/${classId}`);
+        return course.classes.some((cls) => cls.url === `/mekup/${classId}`);
       });
 
       if (foundPaidClass) {
@@ -60,7 +60,7 @@ const Classepage = () => {
   }, [classId]);
 
   return (
-    <div style={{ width: "98.5", overflowX: "hidden" }}>
+    <div style={{ width: "98.5%", overflowX: "hidden" }}>
       <Navbar />
       <div style={{ display: "flex", marginTop: "0.6rem", marginLeft: "0.8rem", width: "97vw", height: "auto", border: "1px solid black" }}>
         {selectedClass ? (
@@ -69,9 +69,9 @@ const Classepage = () => {
 
             <div>
               <h2>List of Lectures:</h2>
-              {selectedClass.lectures && selectedClass.lectures.length > 0 ? (
+              {selectedClass.details && selectedClass.details.length > 0 ? (
                 <ul>
-                  {selectedClass.lectures.map((lecture) => (
+                  {selectedClass.details.map((lecture) => (
                     <li key={lecture.id}>
                       <div style={{ display: "flex", flexDirection: "row", overflowX: "hidden" }}>
                         <div style={{ marginTop: '3rem' }}>
@@ -97,4 +97,5 @@ const Classepage = () => {
   );
 };
 
-export default Classepage;
+export default ClassPage;
+

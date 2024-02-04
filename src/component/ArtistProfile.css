@@ -1,0 +1,52 @@
+/* ArtistProfile.css */
+
+/* Container styling */
+.artist-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Artist header styling */
+  .artist-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Artist image styling */
+  .artist-image {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Adjust the size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  /* Artist gallery styling */
+  .artist-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  /* Service and Pricing section styling */
+  .service-pricing {
+    text-align: center;
+  }
+  
+  /* Payment details styling */
+  .payment-details {
+    margin-top: 20px;
+  }
+  
+  /* Individual service/pricing card styling */
+  .service-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  /* Additional styling for paragraphs and headings as needed */
+  

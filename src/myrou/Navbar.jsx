@@ -99,7 +99,7 @@ const Navbar = () => {
     :
     <ul className="StyledUl">
         <li className="StyledLi" onClick={toggleDropdown} ref={dropdownRef}>
-            <Link className="StyledLink">Course</Link>
+            <Link className="StyledLink">Mekup</Link>
             {showDropdown && (
               <div className="DropdownMenu">
                 <div className="DropdownItem">

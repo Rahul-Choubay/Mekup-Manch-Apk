@@ -56,15 +56,13 @@ const SignUp = () => {
       <div style={{width:"90%", }}>
         <h1>Sign up</h1>
         <p>
-          A world-class education for anyone, anywhere. 100% free.
-          Join Study Academy to get personalized help with what you’re studying or to learn something completely new. We’ll save all of your progress.
-          By signing up for Study Academy, you agree to our Terms of use and Privacy Policy.
+        
         </p>
       </div>
       </Div>  
       {/* Use flexbox to arrange content in a row */}
       <Container>
-        <h1>Join Studey Academy as a</h1>
+        <h1>Join Mekup Manch as a</h1>
         
         {/* Buttons are in the same row */}
         <SignUpButtons setRole={setRole} />

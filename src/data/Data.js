@@ -1,110 +1,51 @@
 
 export const boardExamData = [
   {
-    id: 'CBSE-Board-Exam-Prep',
+    id: 'Grils Mekup',
     title: 'Grils Mekup',
     classes: [
       {
         title: 'Primer',
-        url: '/classpage/1',
-        lectures: [
-          { id: 1, title: 'Math', description: 'Basics of React and its importance.' },
-          { id: 2, title: 'Component Lifecycle', description: 'Understanding the lifecycle of React components.' },
-          { id: 3, title: 'State and Props', description: 'Deep dive into React state and props.' },
-          { id: 4, title: 'Hooks in React', description: 'Understanding useState, useEffect, and custom hooks.' },
-          { id: 5, title: 'Routing in React', description: 'Exploring React Router and its features.' },
+        url: '/mekup/Primer',
+        details: [
+          { id: 1, title: 'Product Type 1', description: 'Smooth and hydrating primer for a flawless makeup base.', price: "300", brand: 'XYZ Cosmetics' },
+          { id: 2, title: 'Product type 2', description: 'Matte finish primer to control oil and shine throughout the day.', price: "800", brand: 'ABC Beauty' },
         ]
       },
       {
-        title: 'Foundation',
-        url: '/classpage/2',
-        lectures: [
-          { id: 6, title: 'Advanced React Patterns', description: 'Exploring advanced patterns in React development.' },
-          { id: 7, title: 'Redux Overview', description: 'Introduction to state management with Redux.' },
-          { id: 8, title: 'Testing in React', description: 'Understanding testing strategies for React applications.' },
-          { id: 9, title: 'Server-Side Rendering', description: 'Implementation of server-side rendering in React.' },
-          { id: 10, title: 'React Performance Optimization', description: 'Optimizing React applications for better performance.' },
+        title: 'Eyeshadow Palette',
+        url: '/mekup/EyeshadowPalette',
+        details: [
+          { id: 3, title: 'Product Type 3', description: 'Versatile eyeshadow palette with a range of colors for different eye looks.', price: "500", brand: 'PQR Makeup' },
+          { id: 4, title: 'Product Type 4', description: 'Shimmer and matte eyeshadows for creating glamorous eye makeup.', price: "750", brand: 'LMN Beauty' },
         ]
-      },
-      {
-        title: 'Blush and Bronzer',
-        url: '/classpage/3',
-        lectures: [
-          { id: 11, title: 'Math - Chapter 1: Numbers', description: 'Understanding basic numbers and their properties.' },
-          { id: 12, title: 'Math - Chapter 2: Shapes and Patterns', description: 'Exploring different shapes and patterns in mathematics.' },
-          // Add more unique lectures for Class 3
-        ]
-      },
-      {
-        title: 'Eyebrows',
-        url: '/classpage/4',
-        lectures: [
-          { id: 13, title: 'Science - Chapter 1: Living and Non-Living Things', description: 'Distinguishing between living and non-living entities.' },
-          { id: 14, title: 'Science - Chapter 2: Plants and Animals', description: 'Learning about different plants and animals.' },
-          // Add more unique lectures for Class 4
-        ]
-      },
-      {
-        title: 'Makeup Brushes and Tools',
-        url: '/classpage/5',
-        lectures: [
-          { id: 15, title: 'Social Studies - Chapter 1: Our Country', description: 'Understanding the geography and culture of our country.' },
-          { id: 16, title: 'Social Studies - Chapter 2: Famous Personalities', description: 'Learning about notable personalities in history.' },
-          // Add more unique lectures for Class 5
-        ]
-      },
-      
-    ],
+      }
+    ]
   },
   {
-    id: 'Up-Board-Exam-Prep',
-    title:'Boys Mekup',
+    id: 'Boys Mekup',
+    title: 'Boys Mekup',
     classes: [
       {
         title: 'Tinted Moisturizer or BB Cream',
-        url: '/classpage/1',
-        lectures: [
-          { id: 1, title: 'Introduction to React', description: 'Basics of React and its importance.' },
-          { id: 2, title: 'Component Lifecycle', description: 'Understanding the lifecycle of React components.' },
-          { id: 3, title: 'State and Props', description: 'Deep dive into React state and props.' },
-          { id: 4, title: 'Hooks in React', description: 'Understanding useState, useEffect, and custom hooks.' },
-          { id: 5, title: 'Routing in React', description: 'Exploring React Router and its features.' },
+        url: '/mekup/TintedMoisturizerorBBCream',
+        details: [
+          { id: 1, title: 'Product type 1', description: 'Lightweight tinted moisturizer for a natural look and sun protection.', price: "300", brand: 'UV Shield' },
+          { id: 2, title: 'Product type 2', description: 'BB Cream with added skincare benefits for a fresh and even skin tone.', price: "300", brand: 'Glow Essentials' },
         ]
       },
       {
-        title: 'Powder',
-        url: '/classpage/2',
-        lectures: [
-          { id: 6, title: 'Advanced React Patterns', description: 'Exploring advanced patterns in React development.' },
-          { id: 7, title: 'Redux Overview', description: 'Introduction to state management with Redux.' },
-          { id: 8, title: 'Testing in React', description: 'Understanding testing strategies for React applications.' },
-          { id: 9, title: 'Server-Side Rendering', description: 'Implementation of server-side rendering in React.' },
-          { id: 10, title: 'React Performance Optimization', description: 'Optimizing React applications for better performance.' },
+        title: 'Concealer Stick',
+        url: '/mekup/ConcealerStick',
+        details: [
+          { id: 3, title: 'Product type 3', description: 'Concealer stick to cover blemishes and imperfections.', price: "250", brand: 'Perfect Cover' },
+          { id: 4, title: 'Product type 4', description: 'Long-wearing concealer for a flawless complexion.', price: "400", brand: 'HD Beauty' },
         ]
-      },
-      {
-        title: 'Lip Balm',
-        url: '/classpage/3',
-        lectures: [
-          { id: 11, title: 'Math - Chapter 1: Numbers', description: 'Understanding basic numbers and their properties.' },
-          { id: 12, title: 'Math - Chapter 2: Shapes and Patterns', description: 'Exploring different shapes and patterns in mathematics.' },
-          // Add more unique lectures for Class 3
-        ]
-      },
-      {
-        title: 'Setting Spray',
-        url: '/classpage/4',
-        lectures: [
-          { id: 13, title: 'Science - Chapter 1: Living and Non-Living Things', description: 'Distinguishing between living and non-living entities.' },
-          { id: 14, title: 'Science - Chapter 2: Plants and Animals', description: 'Learning about different plants and animals.' },
-          // Add more unique lectures for Class 4
-        ]
-      },
-     
-    ],
-  },
-  
+      }
+    ]
+  }
 ];
+
 
  export const paidBatch =[
    {

@@ -14,9 +14,8 @@ function Mainpage() {
      <Navbar />
      <TopArtists />
      <Homepage />
-   {/* <CourseNavigation /> */}  
-     <Testimonial />
-     <Learners />
+    <CourseNavigation /> 
+    <Learners />
      <JoinPage />
      <Footer />
     </div>

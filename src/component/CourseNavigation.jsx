@@ -21,7 +21,7 @@ const CourseNavigation = ({ onSelectClass }) => {
     }
   };
 
-  const combinedData = [...boardExamData, ...paidBatch];
+  const combinedData = [...boardExamData, ];
 
   return (
     <nav

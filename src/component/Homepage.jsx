@@ -1,27 +1,60 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
+const moveLeftToRight = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
 const Homepage = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [animationKey, setAnimationKey] = useState(0);
+
+  const images = ["artist (3).jpeg","artist (7).jpeg", "artist (5).jpeg","artist (4).jpeg",];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setAnimationKey((prevKey) => prevKey + 1);
+    }, 3000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <Div>
       <div className="maindiv">
         <div className="divmain">
-            <div className="img">
-          <div >
-            <img  src="Groom.jpg" alt="Description" />
-          </div>
+          <div className="img" style={{width:"38vw", height:"80vh"}}>
+            <AnimatedImage
+              key={animationKey}
+              src={images[currentImageIndex]}
+              alt="Description"
+              style={{width:"100%", height:"90vh" }}
+            />
           </div>
           <div className="Contentdiv">
-          <div >
-            <h2>For every Bride, every Groom, every Buetu Parler Real results..</h2>
-            <p>We’re a the mission to provide a world-class Meukup for anyone, anywhere.</p>
-            <div className="btndiv" style={{display:"flex", flexDirection:"row"}}>
-            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Clint</Link></button>  
-            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >Artist</Link></button>  
-            <button className="butt" style={{justifyContent:"center", textAlign:"center"}}><Link to="/signup" style={{color:"white" , textDecoration:"none"}}   >/Beauty Parlour</Link> </button>  {/* Corrected spelling from 'Perents' to 'Parents' */}
+            <div>
+              <h2>For every Bride, every Groom, every Beauty Parlor Real results..</h2>
+              <p>We’re on a mission to provide world-class makeup for anyone, anywhere.</p>
+              <div className="btndiv" style={{ display: "flex", flexDirection: "row" }}>
+                <button className="butt" style={{ justifyContent: "center", textAlign: "center" }}>
+                  <Link to="/signup" style={{ color: "white", textDecoration: "none", textAlign: "center", alignItems: "center" }}>Client</Link>
+                </button>
+                <button className="butt" style={{ justifyContent: "center", textAlign: "center" }}>
+                  <Link to="/signup" style={{ color: "white", textDecoration: "none" }}>Artist</Link>
+                </button>
+                <button className="butt" style={{ justifyContent: "center", textAlign: "center" }}>
+                  <Link to="/signup" style={{ color: "white", textDecoration: "none" }}>Beauty Parlour</Link>
+                </button>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -75,5 +108,8 @@ Link{
     }
   }
 `;
-
+const AnimatedImage = styled.img`
+  width: 100%;
+  animation: ${moveLeftToRight} 1s ease-in-out;
+`;
 export default Homepage;

@@ -1,17 +1,18 @@
 // TopArtists.js
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import ArtistDetails from './ArtistDetails'; // Import the new component
 
 const ArtistCard = styled.div`
   border: 1px solid #ddd;
   padding: 20px;
   margin: 10px;
-  width: 300px;
+  width: 18vw;
 
   img {
     width: 100%;
-    height: auto;
+    height: 30vh;
     border-radius: 8px;
   }
 
@@ -35,38 +36,53 @@ const ArtistCard = styled.div`
 
 const TopArtists = () => {
   const navigate = useNavigate();
-  const [topArtists, setTopArtists] = useState([
-    { id: 1, name: 'Artist1', state: 'State1', city: 'City1', image: 'artist1.jpg', bridalPrice: 1000, groomPrice: 800, profile: { paymentPolicy: 'Specify payment policy details here.', paymentMethods: 'Specify accepted payment methods here.', productsUsed: 'Specify the brand, product type, and price details here.' }},
-    { id: 2, name: 'Artist2', state: 'State2', city: 'City2', image: 'artist2.jpg', bridalPrice: 1200, groomPrice: 900, profile: { paymentPolicy: 'Specify payment policy details here.', paymentMethods: 'Specify accepted payment methods here.', productsUsed: 'Specify the brand, product type, and price details here.' }},
-    // Add more dummy data as needed
-  ]);
+  const { artistId } = useParams();
+  const [topArtists, setTopArtists] = useState([]);
+  const [selectedArtist, setSelectedArtist] = useState(null);
 
-  const handleViewProfile = (artist) => {
-    console.log('Selected Artist:', artist);
-    navigate(`/artist/${artist.id}`); // Use navigate instead of history.push
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:6700/register-list');
+        const data = await response.json();
+        setTopArtists(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleViewProfile = async (artist) => {
+    try {
+      const response = await fetch(`http://localhost:6700/register-list/${artist._id}`);
+      const data = await response.json();
+      setSelectedArtist(data);
+      navigate(`/artist/${artist._id}`);
+    } catch (error) {
+      console.error('Error fetching artist details:', error);
+    }
   };
 
   return (
-    <div style={{display:"flex", flexDirection:"column"}}>
-      <div style={{width:"98.5vw", height:"31vh",}}>
+    <div style={{ width: '98.5vw', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: "center", textAlign: "center", alignItems: "center" }}>
+      <h2 style={{ justifyContent: "center", textAlign: "center" }}>Top Artists</h2>
 
-   
-      <h2>Top Artists</h2>
-
-      <div className="artist-cards" style={{display:"flex", flexDirection:"row"}}>
-        {topArtists.map((artist) => (
-          <ArtistCard key={artist.id}>
-            <img src={artist.image} alt={artist.name} />
-            <h3>{artist.name}</h3>
-            <p>{artist.city}, {artist.state}</p>
-            <p>Bridal Price: ${artist.bridalPrice}</p>
-            <p>Groom Price: ${artist.groomPrice}</p>
-
+      <div className="artist-cards" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {topArtists.map((artist, index) => (
+          <ArtistCard key={artist._id}>
+            <img src="Groom1.jpeg" alt={artist.username} />
+            <h3>{`#${index + 1} ${artist.username}`}</h3>
+            <p>{`${artist.city}, ${artist.state}`}</p>
+            <p>{`Bridal Price: $${artist.services?.priceBridalMakeup || 'N/A'}`}</p>
+            <p>{`Engagement Price: $${artist.services?.priceEngagementMakeup || 'N/A'}`}</p>
             <button onClick={() => handleViewProfile(artist)}>View Profile</button>
           </ArtistCard>
         ))}
       </div>
-      </div>
+
+      {artistId && <ArtistDetails artistId={artistId} />} {/* Use the new component with artistId prop */}
     </div>
   );
 };
