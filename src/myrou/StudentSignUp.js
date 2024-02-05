@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import ServiceAndPricing from '../component/ServiceAndPricing'; // Import the new component
 
 const StudentSignUp = () => {
   const [step, setStep] = useState(1);
@@ -20,6 +21,51 @@ const StudentSignUp = () => {
   const [afterWorkPayment, setAfterWorkPayment] = useState("");
   const [paymentMethods, setPaymentMethods] = useState([]);
   const [productsUsed, setProductsUsed] = useState([]);
+  const [bridalHD, setBridalHD] = useState(false);
+  const [bridalAirbrush, setBridalAirbrush] = useState(false);
+  const [bridalCelebrity, setBridalCelebrity] = useState(false);
+  const [bridalSignature, setBridalSignature] = useState(false);
+
+  const [partyMakeup, setPartyMakeup] = useState(false);
+  const [partyAirbrush, setPartyAirbrush] = useState(false);
+
+  const [engagementHD, setEngagementHD] = useState(false);
+  const [engagementAirbrush, setEngagementAirbrush] = useState(false);
+  const [engagementCelebrity, setEngagementCelebrity] = useState(false);
+  const [engagementSignature, setEngagementSignature] = useState(false);
+
+  const [priceGroomMakeup, setPriceGroomMakeup] = useState("");
+  const [groomMakeups, setGroomMakeups] = useState(false);
+  const [groomMakeup, setGroomMakeup] = useState(false);
+  const [groomBasic, setGroomBasic] = useState(false);
+  const [groomHD, setGroomHD] = useState(false);
+
+  const [priceFamilyMakeup, setPriceFamilyMakeup] = useState("");
+  const [familyMakeups, setFamilyMakeups] = useState(false);
+  const [familyMakeup, setFamilyMakeup] = useState(false);
+  const [familyMakeupAirbrush, setFamilyMakeupAirbrush] = useState(false);
+  const [familyMakeupHD, setFamilyMakeupHD] = useState(false);
+  
+  const [basicMakeups, setBasicMakeups] = useState(false);
+  const [basicMakeup, setBasicMakeup] = useState(false);
+  const [bridalBasic, setBridalBasic] = useState(false);
+  const [engagementBasic, setEngagementBasic] = useState(false);
+  const [partyBasic, setPartyBasic] = useState(false);
+
+  const [seniorArtistMakeup, setSeniorArtistMakeup] = useState(false);
+
+  const [partyHDMakeup, setPartyHDMakeup] = useState(false);
+
+  const [mehendiMakeup, setMehendiMakeup] = useState(false);
+  const [mehendiMakeupHD, setMehendiMakeupHD] = useState(false);
+
+  const [receptionMakeup, setReceptionMakeup] = useState(false);
+  const [receptionAirBrushMakeup, setReceptionAirBrushMakeup] = useState(false);
+  const [receptionHDMakeup, setReceptionHDMakeup] = useState(false);
+
+  const [bridalPackage, setBridalPackage] = useState(false);
+  const [bridalAirBrushEngagementAirBrush, setBridalAirBrushEngagementAirBrush] = useState(false);
+  const [bridalHDEngagementHD, setBridalHDEngagementHD] = useState(false);
 
   const navigate = useNavigate();
 
@@ -29,6 +75,14 @@ const StudentSignUp = () => {
 
   const prevStep = () => {
     setStep(step - 1);
+  };
+
+  const handlePaymentMethod = (method) => {
+    if (paymentMethods.includes(method)) {
+      setPaymentMethods(paymentMethods.filter((m) => m !== method));
+    } else {
+      setPaymentMethods([...paymentMethods, method]);
+    }
   };
 
   const collectData = async () => {
@@ -48,7 +102,6 @@ const StudentSignUp = () => {
             engagementMakeup,
             priceBridalMakeup,
             priceEngagementMakeup,
-            
           },
           paymentDetails: {
             advancePayment,
@@ -72,14 +125,6 @@ const StudentSignUp = () => {
     }
   };
 
-  const handlePaymentMethod = (method) => {
-    if (paymentMethods.includes(method)) {
-      setPaymentMethods(paymentMethods.filter((m) => m !== method));
-    } else {
-      setPaymentMethods([...paymentMethods, method]);
-    }
-  };
-
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -90,6 +135,7 @@ const StudentSignUp = () => {
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} type="date" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} />
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" />
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
+
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={state} onChange={(e) => setState(e.target.value)} type="text" placeholder="State" />
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder="City" />
               <textarea style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={bio} onChange={(e) => setBio(e.target.value)} placeholder="Bio" />
@@ -102,41 +148,19 @@ const StudentSignUp = () => {
 
       case 2:
         return (
-          <div>
-            <h2>Student Sign Up - Step 2</h2>
-            <h2>Service & Pricing</h2>
-            <h3></h3>
-            <label>
-              Bridal Makeup
-              <input type="checkbox" checked={bridalMakeup} onChange={() => setBridalMakeup(!bridalMakeup)} />
-            </label>
-            {bridalMakeup && (
-              <div>
-                <label>
-                  Airbrush
-                  <input type="checkbox" checked={airbrush} onChange={() => setAirbrush(!airbrush)} />
-                </label>
-                <input value={priceBridalMakeup} onChange={(e) => setPriceBridalMakeup(e.target.value)} type="text" placeholder="Price for Bridal Makeup" />
-              </div>
-            )}
-
-            <h3>Engagement Makeup</h3>
-            <label>
-              Engagement Makeup
-              <input type="checkbox" checked={engagementMakeup} onChange={() => setEngagementMakeup(!engagementMakeup)} />
-            </label>
-            {engagementMakeup && (
-              <>
-                <label>
-                  Airbrush
-                  <input type="checkbox" checked={airbrush} onChange={() => setAirbrush(!airbrush)} />
-                </label>
-                <input value={priceEngagementMakeup} onChange={(e) => setPriceEngagementMakeup(e.target.value)} type="text" placeholder="Price for Engagement Makeup" />
-              </>
-            )}
-
-            <button onClick={nextStep}>Next</button>
-          </div>
+          <ServiceAndPricing
+            bridalMakeup={bridalMakeup}
+            airbrush={airbrush}
+            engagementMakeup={engagementMakeup}
+            priceBridalMakeup={priceBridalMakeup}
+            priceEngagementMakeup={priceEngagementMakeup}
+            setBridalMakeup={setBridalMakeup}
+            setAirbrush={setAirbrush}
+            setPriceBridalMakeup={setPriceBridalMakeup}
+            setEngagementMakeup={setEngagementMakeup}
+            setPriceEngagementMakeup={setPriceEngagementMakeup}
+            nextStep={nextStep}
+          />
         );
 
       case 3:
@@ -191,3 +215,4 @@ const StudentSignUp = () => {
 };
 
 export default StudentSignUp;
+
