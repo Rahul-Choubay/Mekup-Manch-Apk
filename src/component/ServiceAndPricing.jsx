@@ -13,6 +13,42 @@ const ServiceAndPricing = ({
   setPriceBridalMakeup,
   setEngagementMakeup,
   setPriceEngagementMakeup,
+  setBridalHD,
+  setBridalAirbrush,
+  setBridalCelebrity,
+  setBridalSignature,
+  setEngagementHD,
+  setEngagementAirbrush,
+  setEngagementCelebrity,
+  setEngagementSignature,
+  setPriceGroomMakeup,
+  setGroomMakeups,
+  setGroomMakeup,
+  setGroomBasic,
+  setGroomHD,
+  setFamilyMakeups,
+  setPriceFamilyMakeup,
+  setFamilyMakeup,
+  setFamilyMakeupAirbrush,
+  setFamilyMakeupHD,
+  bridalHD,
+  bridalAirbrush,
+  bridalCelebrity,
+  bridalSignature,
+  engagementHD,
+  engagementAirbrush,
+  engagementCelebrity,
+  engagementSignature,
+  priceGroomMakeup,
+  groomMakeups,
+  groomMakeup,
+  groomBasic,
+  groomHD,
+  familyMakeups,
+  priceFamilyMakeup,
+  familyMakeup,
+  familyMakeupAirbrush,
+  familyMakeupHD,
   nextStep,
 }) => {
   return (
@@ -161,37 +197,7 @@ const ServiceAndPricing = ({
 
         </>
       )}
-      <h3>Basic Makeup::</h3>
-      <label>
-      Basic Makeup
-        <input type="checkbox" checked={familyMakeups} onChange={() => setFamilyMakeups(!familyMakeups)} />
-      </label>
-      {familyMakeups && (
-        <>
-        <div>
-          <label>
-          familyMakeup
-            <input type="checkbox" checked={familyMakeup} onChange={() => setFamilyMakeup(!familyMakeup)} />
-          </label>
-          <input value={priceFamilyMakeup} onChange={(e) => setPriceFamilyMakeup(e.target.value)} type="text" placeholder="Price for Engagement Makeup" />
-          </div>
-          <div>
-          <label>
-          family Makeup Airbrush
-            <input type="checkbox" checked={familyMakeupAirbrush} onChange={() => setFamilyMakeupAirbrush(!familyMakeupAirbrush)} />
-          </label>
-          <input value={priceFamilyMakeup} onChange={(e) => setPriceFamilyMakeup(e.target.value)} type="text" placeholder="Price for Engagement Makeup" />
-          </div>
-          <div>
-          <label>
-          familyMakeupHD
-            <input type="checkbox" checked={familyMakeupHD} onChange={() => setFamilyMakeupHD(!familyMakeupHD)} />
-          </label>
-          <input value={priceFamilyMakeup} onChange={(e) => setPriceFamilyMakeup(e.target.value)} type="text" placeholder="Price for Engagement Makeup" />
-          </div>
-
-        </>
-      )}
+     
       <button onClick={nextStep}>Next</button>
     </div>
   );

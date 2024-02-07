@@ -25,10 +25,7 @@ const StudentSignUp = () => {
   const [bridalAirbrush, setBridalAirbrush] = useState(false);
   const [bridalCelebrity, setBridalCelebrity] = useState(false);
   const [bridalSignature, setBridalSignature] = useState(false);
-
-  const [partyMakeup, setPartyMakeup] = useState(false);
-  const [partyAirbrush, setPartyAirbrush] = useState(false);
-
+ 
   const [engagementHD, setEngagementHD] = useState(false);
   const [engagementAirbrush, setEngagementAirbrush] = useState(false);
   const [engagementCelebrity, setEngagementCelebrity] = useState(false);
@@ -45,27 +42,7 @@ const StudentSignUp = () => {
   const [familyMakeup, setFamilyMakeup] = useState(false);
   const [familyMakeupAirbrush, setFamilyMakeupAirbrush] = useState(false);
   const [familyMakeupHD, setFamilyMakeupHD] = useState(false);
-  
-  const [basicMakeups, setBasicMakeups] = useState(false);
-  const [basicMakeup, setBasicMakeup] = useState(false);
-  const [bridalBasic, setBridalBasic] = useState(false);
-  const [engagementBasic, setEngagementBasic] = useState(false);
-  const [partyBasic, setPartyBasic] = useState(false);
-
-  const [seniorArtistMakeup, setSeniorArtistMakeup] = useState(false);
-
-  const [partyHDMakeup, setPartyHDMakeup] = useState(false);
-
-  const [mehendiMakeup, setMehendiMakeup] = useState(false);
-  const [mehendiMakeupHD, setMehendiMakeupHD] = useState(false);
-
-  const [receptionMakeup, setReceptionMakeup] = useState(false);
-  const [receptionAirBrushMakeup, setReceptionAirBrushMakeup] = useState(false);
-  const [receptionHDMakeup, setReceptionHDMakeup] = useState(false);
-
-  const [bridalPackage, setBridalPackage] = useState(false);
-  const [bridalAirBrushEngagementAirBrush, setBridalAirBrushEngagementAirBrush] = useState(false);
-  const [bridalHDEngagementHD, setBridalHDEngagementHD] = useState(false);
+const [profileImage, setProfileImage] =("");
 
   const navigate = useNavigate();
 
@@ -102,6 +79,24 @@ const StudentSignUp = () => {
             engagementMakeup,
             priceBridalMakeup,
             priceEngagementMakeup,
+            bridalHD,
+            bridalAirbrush,
+            bridalCelebrity,
+            bridalSignature,
+            engagementHD,
+            engagementAirbrush,
+            engagementCelebrity,
+            engagementSignature,
+            priceGroomMakeup,
+            groomMakeups,
+            groomMakeup,
+            groomBasic,
+            groomHD,
+            familyMakeups,
+            priceFamilyMakeup,
+            familyMakeup,
+            familyMakeupAirbrush,
+            familyMakeupHD,
           },
           paymentDetails: {
             advancePayment,
@@ -109,6 +104,7 @@ const StudentSignUp = () => {
             paymentMethods,
           },
           productsUsed,
+          profileImage,
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -139,6 +135,8 @@ const StudentSignUp = () => {
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={state} onChange={(e) => setState(e.target.value)} type="text" placeholder="State" />
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder="City" />
               <textarea style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={bio} onChange={(e) => setBio(e.target.value)} placeholder="Bio" />
+              <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} type="file" onChange={(e) => setProfileImage(e.target.value)} />
+  
             </div>
             <div style={{ width: "36vw", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
               <button style={{ width: "12vw", height: "6vh", marginRight: "6rem", marginTop: "1rem" }} onClick={nextStep}>Next</button>
@@ -159,9 +157,28 @@ const StudentSignUp = () => {
             setPriceBridalMakeup={setPriceBridalMakeup}
             setEngagementMakeup={setEngagementMakeup}
             setPriceEngagementMakeup={setPriceEngagementMakeup}
+            setBridalHD={setBridalHD}
+setBridalSignature={setBridalSignature}
+setBridalAirbrush={setBridalAirbrush}
+setBridalCelebrity={setBridalCelebrity}
+setEngagementHD={setEngagementHD}
+setEngagementAirbrush={setEngagementAirbrush}
+setEngagementCelebrity={setEngagementCelebrity}
+setEngagementSignature={setEngagementSignature}
+setPriceGroomMakeup ={setPriceGroomMakeup}
+setGroomBasic={setGroomBasic}
+setGroomMakeup={setGroomMakeup}
+setGroomMakeups={setGroomMakeups}
+setGroomHD={setGroomHD}
+setFamilyMakeup={setFamilyMakeup}
+setFamilyMakeupAirbrush={setFamilyMakeupAirbrush}
+setFamilyMakeupHD={setFamilyMakeupHD}
+setFamilyMakeups={setFamilyMakeups}
             nextStep={nextStep}
           />
         );
+        
+       
 
       case 3:
         return (
