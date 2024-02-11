@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import MyAccount from './MyAccount';
-import Progress from './Progress';
+
 
 import Navbar from '../myrou/Navbar';
 import ManagementTeem from './ManagementTeem';
 import YourCourse from './YourCourse';
+import PhotoUpload from './PhotoUpload';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('myAccount');
@@ -14,7 +15,7 @@ const Dashboard = () => {
       case 'myAccount':
         return <MyAccount />;
       case 'progress':
-        return <Progress />;
+        return <PhotoUpload />;
       case 'managementTeem':
         return <ManagementTeem />;
       case 'yourcourse':

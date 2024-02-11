@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import PhotoUpload from './PhotoUpload';
 
 const ArtistDetails = () => {
   const { artistId } = useParams();
@@ -33,7 +34,7 @@ const ArtistDetails = () => {
           <h2>Selected Artist Details</h2>
       <p>Username: {artistDetails.username}</p>
       <p>Email: {artistDetails.email}</p>
-      
+      <img src={`${artistDetails.profileImage}`} alt={artistDetails.username} />
       <p>Date of Birth: {artistDetails.dateOfBirth}</p>
       <p>State: {artistDetails.state}</p>
       <p>City: {artistDetails.city}</p>
@@ -52,6 +53,8 @@ const ArtistDetails = () => {
       <p>Payment Methods: {artistDetails.paymentDetails?.paymentMethods?.join(', ') || 'N/A'}</p>
 
       <p>Products Used: {artistDetails.productsUsed || 'N/A'}</p>
+
+      {artistId && <PhotoUpload artistId={artistId} />}
           {/* Add other properties as needed */}
         </div>
       ) : (

@@ -42,7 +42,8 @@ const StudentSignUp = () => {
   const [familyMakeup, setFamilyMakeup] = useState(false);
   const [familyMakeupAirbrush, setFamilyMakeupAirbrush] = useState(false);
   const [familyMakeupHD, setFamilyMakeupHD] = useState(false);
-const [profileImage, setProfileImage] =("");
+  const [profileImage, setProfileImage] = useState("");
+
 
   const navigate = useNavigate();
 
@@ -120,6 +121,15 @@ const [profileImage, setProfileImage] =("");
       alert("Please enter correct details");
     }
   };
+  const handleProfileImageChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setProfileImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+  
 
   const renderStep = () => {
     switch (step) {
@@ -131,13 +141,17 @@ const [profileImage, setProfileImage] =("");
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} type="date" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} />
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" />
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" />
-
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={state} onChange={(e) => setState(e.target.value)} type="text" placeholder="State" />
               <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder="City" />
               <textarea style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} value={bio} onChange={(e) => setBio(e.target.value)} placeholder="Bio" />
-              <input style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }} type="file" onChange={(e) => setProfileImage(e.target.value)} />
-  
-            </div>
+              <input
+  style={{ width: "12vw", height: "6vh", marginLeft: "1rem" }}
+  type="file"
+  onChange={handleProfileImageChange}
+/>
+
+    
+     </div>
             <div style={{ width: "36vw", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
               <button style={{ width: "12vw", height: "6vh", marginRight: "6rem", marginTop: "1rem" }} onClick={nextStep}>Next</button>
             </div>

@@ -15,6 +15,7 @@ import CoursePage from '../component/CoursePage';
 import TopBeautyParlour from '../component/TopBeautyParlour';
 import BeautyParlourProfile from '../component/BeautyParlourProfile';
 import ArtistDetails from '../component/ArtistDetails';
+import PhotoUpload from '../component/PhotoUpload';
 
 const MyRoute = () => {
   return (
@@ -25,8 +26,10 @@ const MyRoute = () => {
       <Route path="/login" element={<Login />} />
      <Route path="/mekup/:classId" element={<Classepage />} />
 
-      <Route path="/artist" element={<TopArtists />} />
-      <Route path="/artist/:artistId" element={<ArtistDetails />} />
+     <Route path="/artist" element={<TopArtists />} />
+<Route path="/artist/:artistId" element={<ArtistDetails />}>
+  <Route path="photos" element={<PhotoUpload />} />
+</Route>
       <Route path="/beautyparlour" element={<TopBeautyParlour />} /> 
       <Route path="/beautyparlour/:id" element={<BeautyParlourProfile />} />
       <Route path="/Dashboard" element={<Dashboard />} />

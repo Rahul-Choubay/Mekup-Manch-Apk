@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ArtistDetails from './ArtistDetails'; // Import the new component
 
+
 const ArtistCard = styled.div`
   border: 1px solid #ddd;
   padding: 20px;
@@ -58,6 +59,7 @@ const TopArtists = () => {
     try {
       const response = await fetch(`http://localhost:6700/register-list/${artist._id}`);
       const data = await response.json();
+      console.log('Artist profileImage:', data.profileImage);
       setSelectedArtist(data);
       navigate(`/artist/${artist._id}`);
     } catch (error) {
@@ -72,7 +74,10 @@ const TopArtists = () => {
       <div className="artist-cards" style={{ display: 'flex', flexWrap: 'wrap' }}>
         {topArtists.map((artist, index) => (
           <ArtistCard key={artist._id}>
-            <img src="Groom1.jpeg" alt={artist.username} />
+           <img src={`${artist.profileImage}`} alt={artist.username} />
+            {/* Add console.log to check the profileImage URL */}
+            {console.log('Artist profileImage:', artist.profileImage)}
+
             <h3>{`#${index + 1} ${artist.username}`}</h3>
             <p>{`${artist.city}, ${artist.state}`}</p>
             <p>{`Bridal Price: $${artist.services?.priceBridalMakeup || 'N/A'}`}</p>
@@ -82,7 +87,8 @@ const TopArtists = () => {
         ))}
       </div>
 
-      {artistId && <ArtistDetails artistId={artistId} />} {/* Use the new component with artistId prop */}
+      {artistId && <ArtistDetails artistId={artistId} />} 
+      {/* Use the new component with artistId prop */}
     </div>
   );
 };
