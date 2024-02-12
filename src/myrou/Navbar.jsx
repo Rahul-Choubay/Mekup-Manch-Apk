@@ -67,7 +67,7 @@ const Navbar = () => {
           {/* Other Navbar items */}
           <li className="StyledLi">
             <Link className="StyledLink" to="">
-              <input type="search" placeholder="search" />
+              <input type="search" placeholder="search your artist & mekeup" style={{width:"27vw", borderRadius:"49px", height:"6vh"}}/>
             </Link>
           </li>
           <li className="StyledLi">
@@ -122,7 +122,7 @@ const Navbar = () => {
           {/* Other Navbar items */}
           <li className="StyledLi">
             <Link className="StyledLink" to="">
-              <input type="search" placeholder="search" />
+              <input type="search" placeholder="search your artist & mekeup" style={{width:"27vw", borderRadius:"49px", height:"6vh"}}/>
             </Link>
           </li>
           <li className="StyledLi">
@@ -161,14 +161,17 @@ const Navbar = () => {
 const Navbarstyles = styled.div`
   /* Navbar styles */
   nav {
-    background-color: #333;
-    height: 12vh;
+    background-color: #fd3c96;
+    height: 17vh;
     color: #fff;
-    width: 100vw;
+    width: 97vw;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
+    border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 40px;
+
     position: relative;
     z-index: 2; /* Set a z-index for the Navbar */
   }

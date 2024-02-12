@@ -16,6 +16,7 @@ const MyAccount = () => {
         <div className="user-info">
           <p>
             <strong>Name:</strong> {userInfo.username}
+            <strong>Name:</strong> {userInfo._id}
           </p>
           <p>
             <strong>Email:</strong> {userInfo.email}

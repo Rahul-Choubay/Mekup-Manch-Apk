@@ -15,9 +15,9 @@ function Learners() {
       </div>
       <div style={{width:"90vw", display:"flex", flexDirection:"column", justifyContent:"center", textAlign:"center",alignItems:'center'}}>
         <div style={{width:"85vw", display:"flex", flexDirection:"row", justifyContent:"center", textAlign:"center",alignItems:'center'}}>
-        <div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
-        <div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
-        <div><img style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+        <div><img className='img' style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+        <div><img className='img'  style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
+        <div><img className='img' style={{marginLeft:"0.5rem"}} src='Groom1.jpeg' alt='bride' /></div>
 
         </div>
         </div>
@@ -51,11 +51,17 @@ const Div = styled.div`
 }
 
 .image {
-  max-width: 100%;  /* Ensure the image does not exceed its container */
-  height: auto;  /* Maintain aspect ratio */
-  display: block;  /* Remove any inline spacing or margins */
-}
+  max-width: 100%;
+  height: auto;
 
+}
+.img{
+
+  :hover {
+  background-color: red;
+}
+}
+ 
 
 
 `;

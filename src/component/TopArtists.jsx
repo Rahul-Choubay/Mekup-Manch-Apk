@@ -31,7 +31,9 @@ const ArtistCard = styled.div`
     border: none;
     padding: 10px;
     cursor: pointer;
-    width: 100%;
+    width: 48%;
+    margin-left: 1%;
+    border-radius:10px;
   }
 `;
 
@@ -71,7 +73,7 @@ const TopArtists = () => {
     <div style={{ width: '98.5vw', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: "center", textAlign: "center", alignItems: "center" }}>
       <h2 style={{ justifyContent: "center", textAlign: "center" }}>Top Artists</h2>
 
-      <div className="artist-cards" style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div className="artist-cards" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "center", textAlign: "center", alignItems:"center" }}>
         {topArtists.map((artist, index) => (
           <ArtistCard key={artist._id}>
            <img src={`${artist.profileImage}`} alt={artist.username} />
@@ -82,7 +84,10 @@ const TopArtists = () => {
             <p>{`${artist.city}, ${artist.state}`}</p>
             <p>{`Bridal Price: $${artist.services?.priceBridalMakeup || 'N/A'}`}</p>
             <p>{`Engagement Price: $${artist.services?.priceEngagementMakeup || 'N/A'}`}</p>
+            <div>
             <button onClick={() => handleViewProfile(artist)}>View Profile</button>
+            <button onClick={() => handleViewProfile(artist)}>Book Now</button>
+            </div>
           </ArtistCard>
         ))}
       </div>

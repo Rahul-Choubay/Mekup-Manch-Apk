@@ -28,7 +28,6 @@ const MyRoute = () => {
 
      <Route path="/artist" element={<TopArtists />} />
 <Route path="/artist/:artistId" element={<ArtistDetails />}>
-  <Route path="photos" element={<PhotoUpload />} />
 </Route>
       <Route path="/beautyparlour" element={<TopBeautyParlour />} /> 
       <Route path="/beautyparlour/:id" element={<BeautyParlourProfile />} />

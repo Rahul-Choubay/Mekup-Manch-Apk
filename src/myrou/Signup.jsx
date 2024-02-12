@@ -52,14 +52,6 @@ const SignUp = () => {
 
   return (
     <Containerr>
-      <Div>
-      <div style={{width:"90%", }}>
-        <h1>Sign up</h1>
-        <p>
-        
-        </p>
-      </div>
-      </Div>  
       {/* Use flexbox to arrange content in a row */}
       <Container>
         <h1>Join Mekup Manch as a</h1>

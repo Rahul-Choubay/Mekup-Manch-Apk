@@ -54,7 +54,7 @@ const ArtistDetails = () => {
 
       <p>Products Used: {artistDetails.productsUsed || 'N/A'}</p>
 
-      {artistId && <PhotoUpload artistId={artistId} />}
+    
           {/* Add other properties as needed */}
         </div>
       ) : (
