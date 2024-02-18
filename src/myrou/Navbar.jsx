@@ -150,7 +150,11 @@ const Navbar = () => {
           Sign up
         </Link>
       </li>
-    
+      <li className="StyledLi">
+        <Link className="StyledLink" to="/mekupbookingform">
+          Mekup Based Booking
+        </Link>
+      </li>
     </ul>
   }   </nav>
     </Navbarstyles>

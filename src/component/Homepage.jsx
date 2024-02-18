@@ -1,115 +1,88 @@
-import React, { useState, useEffect } from "react";
-import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
-const moveLeftToRight = keyframes`
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-`;
-
-const Homepage = () => {
+const HomePage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [animationKey, setAnimationKey] = useState(0);
-
-  const images = ["artist (3).jpeg","artist (7).jpeg", "artist (5).jpeg","artist (4).jpeg",];
+  const images = [
+    'grrom11.jpg',
+    'homepage1.jpg',
+    'homepage2.jpg',
+    'homepage3.jpg',
+    'homepage4.jpg',
+  ];
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-      setAnimationKey((prevKey) => prevKey + 1);
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     }, 3000);
-
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <Div>
-      <div className="maindiv">
-        <div className="divmain">
-          <div className="img" style={{width:"38vw", height:"80vh"}}>
-            <AnimatedImage
-              key={animationKey}
-              src={images[currentImageIndex]}
-              alt="Description"
-              style={{width:"100%", height:"90vh" }}
-            />
-          </div>
-          <div className="Contentdiv">
-            <div>
-              <h2>For every Bride, every Groom, every Beauty Parlor Real results..</h2>
-              <p>We’re on a mission to provide world-class makeup for anyone, anywhere.</p>
-              <div className="btndiv" style={{ display: "flex", flexDirection: "row" }}>
-                <button className="butt" style={{ justifyContent: "center", textAlign: "center" }}>
-                  <Link to="/signup" style={{ color: "white", textDecoration: "none", textAlign: "center", alignItems: "center" }}>Client</Link>
-                </button>
-                <button className="butt" style={{ justifyContent: "center", textAlign: "center" }}>
-                  <Link to="/signup" style={{ color: "white", textDecoration: "none" }}>Artist</Link>
-                </button>
-                <button className="butt" style={{ justifyContent: "center", textAlign: "center" }}>
-                  <Link to="/signup" style={{ color: "white", textDecoration: "none" }}>Beauty Parlour</Link>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Div>
+    <Container>
+      <ImageContainer style={{ backgroundImage: `url(${images[currentImageIndex]})` }}>
+        <Content>
+          <Heading>For every Bride, every Groom, every Beauty Parlor Real results..</Heading>
+          <Paragraph>We’re on a mission to provide world-class makeup for anyone, anywhere.</Paragraph>
+          <Heading>Join As a</Heading>
+          <Buttons>
+            <Button>Artist</Button>
+            <Button>Client</Button>
+            <Button>Beauty Parlor</Button>
+          </Buttons>
+        </Content>
+      </ImageContainer>
+    </Container>
   );
 };
 
-const Div = styled.div`
-  display: flex;
-  flex-direction: row;
-  overflow:hidden;
-  width: 97vw;
-  height:100vh;
-
-  .maindiv {
-    display: flex;
-    flex-direction: row;
-    width: 97%;
-
-    .divmain {
-      display: flex;
-      align-items: center; /* Added to vertically center the img and Contentdiv */
-      .img {
-        width: 40%;
-        height: auto; 
-       margin-left: 2rem;
-        img{
-            width: 100%;
-        }
-      }
-
-      .Contentdiv {
-        width: 60%; 
-        padding-left: 20px; 
-        .btndiv{
-          width:100%;
-        .butt{
-            background-color: #1865f2;
-            border:none;
-            width: 9vw;
-            height:6.5vh;
-        
-            border-radius:10px;
-            margin-left:1rem;
-Link{
-  color:white;
-}
-        }
-      }
-      }
-    }
-  }
-`;
-const AnimatedImage = styled.img`
+const Container = styled.div`
   width: 100%;
-  animation: ${moveLeftToRight} 1s ease-in-out;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 `;
-export default Homepage;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius:70px;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Content = styled.div`
+  text-align: center;
+  color: white;
+`;
+
+const Heading = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+`;
+
+const Paragraph = styled.p`
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Button = styled.button`
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  background-color: green; /* Customized color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+`;
+
+export default HomePage;

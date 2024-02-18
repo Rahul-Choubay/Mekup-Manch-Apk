@@ -1,9 +1,8 @@
-// TopArtists.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ArtistDetails from './ArtistDetails'; // Import the new component
-
+import { Link } from 'react-router-dom';
 
 const ArtistCard = styled.div`
   border: 1px solid #ddd;
@@ -42,6 +41,7 @@ const TopArtists = () => {
   const { artistId } = useParams();
   const [topArtists, setTopArtists] = useState([]);
   const [selectedArtist, setSelectedArtist] = useState(null);
+  const [showAllArtists, setShowAllArtists] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,26 +73,51 @@ const TopArtists = () => {
     <div style={{ width: '98.5vw', height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: "center", textAlign: "center", alignItems: "center" }}>
       <h2 style={{ justifyContent: "center", textAlign: "center" }}>Top Artists</h2>
 
-      <div className="artist-cards" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "center", textAlign: "center", alignItems:"center" }}>
-        {topArtists.map((artist, index) => (
-          <ArtistCard key={artist._id}>
-           <img src={`${artist.profileImage}`} alt={artist.username} />
-            {/* Add console.log to check the profileImage URL */}
-            {console.log('Artist profileImage:', artist.profileImage)}
+      <div className="artist-cards" style={{width: '97vw', height:"90vh", display: 'flex', flexWrap: 'wrap', justifyContent: "center", textAlign: "center", alignItems:"center", flexDirection:"column", marginBottom:"1rem", border:"5px solid pink", borderRadius:"3rem" }}>
+      <div style={{display: 'flex', borderRadius:"2rem", background:"pink" , flexWrap: 'wrap', justifyContent: "center", textAlign: "center", alignItems:"center", flexDirection:"row"}}>
+        {showAllArtists
+          ? topArtists.map((artist, index) => (
+              <ArtistCard key={artist._id} style={{borderRadius:"2rem", }}>
+                <img src={`${artist.profileImage}`} alt={artist.username} />
+                {/* Add console.log to check the profileImage URL */}
+                {console.log('Artist profileImage:', artist.profileImage)}
 
-            <h3>{`#${index + 1} ${artist.username}`}</h3>
-            <p>{`${artist.city}, ${artist.state}`}</p>
-            <p>{`Bridal Price: $${artist.services?.priceBridalMakeup || 'N/A'}`}</p>
-            <p>{`Engagement Price: $${artist.services?.priceEngagementMakeup || 'N/A'}`}</p>
-            <div>
-            <button onClick={() => handleViewProfile(artist)}>View Profile</button>
-            <button onClick={() => handleViewProfile(artist)}>Book Now</button>
+                <h3>{`#${index + 1} ${artist.username}`}</h3>
+                <p>{`${artist.city}, ${artist.state}`}</p>
+                <p>{`Bridal Price: $${artist.services?.priceBridalMakeup || 'N/A'}`}</p>
+                <p>{`Engagement Price: $${artist.services?.priceEngagementMakeup || 'N/A'}`}</p>
+                <div>
+                  <button onClick={() => handleViewProfile(artist)}>View Profile</button>
+                  <Link to="/bookingform"><button>Book Now</button></Link>
+                </div>
+              </ArtistCard>
+            ))
+          : topArtists.slice(0, 2).map((artist, index) => (
+              <ArtistCard key={artist._id}>
+                <img src={`${artist.profileImage}`} alt={artist.username} />
+                {/* Add console.log to check the profileImage URL */}
+                {console.log('Artist profileImage:', artist.profileImage)}
+
+                <h3>{`#${index + 1} ${artist.username}`}</h3>
+                <p>{`${artist.city}, ${artist.state}`}</p>
+                <p>{`Bridal Price: $${artist.services?.priceBridalMakeup || 'N/A'}`}</p>
+                <p>{`Engagement Price: $${artist.services?.priceEngagementMakeup || 'N/A'}`}</p>
+                <div>
+                  <button onClick={() => handleViewProfile(artist)}>View Profile</button>
+                  <Link to="/bookingform"><button>Book Now</button></Link>
+                </div>
+              </ArtistCard>
+            ))}
             </div>
-          </ArtistCard>
-        ))}
+<div>
+        {topArtists.length > 2 && (
+          <button onClick={() => setShowAllArtists(!showAllArtists)}>
+            {showAllArtists ? 'Show Less' : 'Show More'}
+          </button>
+        )}
       </div>
-
-      {artistId && <ArtistDetails artistId={artistId} />} 
+</div>
+      {artistId && <ArtistDetails artistId={artistId} />}
       {/* Use the new component with artistId prop */}
     </div>
   );

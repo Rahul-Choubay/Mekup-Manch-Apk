@@ -1,0 +1,65 @@
+.booking-form {
+    font-family: Arial, sans-serif;
+    max-width: 92vw;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffe6f1; /* Light pink background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .booking-form {
+      max-width: 600px;
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .form-title {
+    grid-column: span 3;
+    text-align: center;
+    color: #333;
+  }
+  
+  .category {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .service-label {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #f2c1d7; /* Light pink border */
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff; /* White background */
+  }
+  
+  .service-label:hover {
+    background-color: #f2c1d7; /* Light pink background on hover */
+  }
+  
+  .service-name {
+    margin-right: 10px;
+  }
+  
+  .service-price {
+    float: right;
+    color: #333;
+  }
+  
+  .total-price {
+    grid-column: span 3;
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+  }
+  

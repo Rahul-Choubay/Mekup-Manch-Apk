@@ -16,6 +16,8 @@ import TopBeautyParlour from '../component/TopBeautyParlour';
 import BeautyParlourProfile from '../component/BeautyParlourProfile';
 import ArtistDetails from '../component/ArtistDetails';
 import PhotoUpload from '../component/PhotoUpload';
+import BookingForm from './BooingForm';
+import MekeupBookingForm from './MekeupBookingForm';
 
 const MyRoute = () => {
   return (
@@ -33,6 +35,8 @@ const MyRoute = () => {
       <Route path="/beautyparlour/:id" element={<BeautyParlourProfile />} />
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="/courses" element={<CoursePage />} />
+      <Route path="/bookingform" element={<BookingForm />} />
+      <Route path="/mekupbookingform" element={<MekeupBookingForm />} />
     </Routes>
   );
 };
