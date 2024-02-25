@@ -57,20 +57,25 @@ const ImageContainer = styled.div`
 const Content = styled.div`
   text-align: center;
   color: white;
+ 
 `;
 
 const Heading = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.9rem;
+  font-weight: 390;
+  margin-bottom: 0.5rem;
+  
 `;
 
 const Paragraph = styled.p`
   font-size: 1.2rem;
+  font-weight: 390;
   margin-bottom: 1.5rem;
 `;
 
 const Buttons = styled.div`
   display: flex;
+
   justify-content: center;
 `;
 
@@ -80,9 +85,12 @@ const Button = styled.button`
   background-color: green; /* Customized color */
   color: white;
   border: none;
+  width:14vw;
+  height:6vh;
+  font-weight: 340;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.3rem;
 `;
 
 export default HomePage;

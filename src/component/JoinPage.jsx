@@ -5,83 +5,71 @@ function JoinPage() {
   return (
     <Div>
     <div className="home-page">
-      <h1>Join Meakup manch today</h1>
-      <button><Link to="/signup" style={{color:"white" , textDecoration:"none" , textAlign:"center", alignItems:"center"}}  >Clint</Link></button>
-                  <a href="/signup" className="button">
-        Give today <span className="amount">5999</span>
-        <span className="so">・</span>
-        <span className="goal">92%</span>
-        <span className="goal-text">& of 15000 goal</span>
-      </a>
+      <div>
+      <img src='/sale-badge.png' alt='' />
+      </div>
+    
+     <div className='con'>
+      <h2>Book Your Appointment Now And Get 25% Off</h2>
+      <p>Awesome Monsoon Sale - 25% OFF On All Professional Make Up From Only $59</p>
+     </div >
+     <div className='btn'>
+     <button> Book An Appointment</button>
+     </div>
+    
     </div>
     </Div>
   );
 }
 const Div = styled.div`
 .home-page {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 50px;
-  background-color: #f5f5f5;
-  button{
-    width:15vw;
-    height:6vh;
-    margin-bottom:0.4rem;
-    background-color: #1865f2;
-    border-radius: 8px;
-    color:white;
+  flex-direction: row;
+  background-color:#08acf2;
+  img{
+    width: 52%;
   }
+.con{
+  justify-content:center;
+  align-item: center;
+  color:white;
+  p{
+    font-size: 1rem;
+    font-weight: 360;
+  }
+  h2{
+    font-size: 1.5rem;
+    font-weight: 560;
+  }
+
+
+}
+.btn{
+  width: 30%;
+  display:flex;
+  justify-content:center;
+  align-item: center;
+
+  button {
+    margin-top: 3rem;
+    width: 18vw;
+    height: 7vh;
+    color: white;
+    background-color: transparent;
+    border-radius: 9px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Add box-shadow to the transition */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 1.3); /* Add a subtle shadow */
+  }
+  button:hover {
+    color: black;
+    background-color: pink;
+  }
+  
 }
 
-.home-page h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.home-page p {
-  font-size: 24px;
-  margin-bottom: 50px;
-}
-
-.home-page .highlight {
-  color: #000;
-  font-weight: bold;
-}
-
-.home-page .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
-  background-color: #000;
-  color: #fff;
-  font-size: 24px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 30px;
-}
-
-.home-page .amount {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0 10px;
-}
-
-.home-page .so {
-  margin: 0 10px;
-}
-
-.home-page .goal {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0 10px;
-}
-
-.home-page .goal-text {
-  font-size: 24px;
-  margin-left: 10px;
 }
 
 `;
